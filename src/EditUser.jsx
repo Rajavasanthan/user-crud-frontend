@@ -19,7 +19,7 @@ function EditUser() {
       }
 
       if (values.age < 18) {
-        error.age = "Please enter age between 18 & 50";
+        error.age = "Please enter age greater than 18";
       }
 
       return error;

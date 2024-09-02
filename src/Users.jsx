@@ -51,15 +51,15 @@ function Users() {
                     <td>{user.name}</td>
                     <td>{user.age}</td>
                     <td>
-                      <Link to={`/user/${user.id}`} className="btn btn-primary">
+                      <Link to={`/user/${user._id}`} className="btn btn-primary">
                         View
                       </Link>{" "}
-                      <Link to={`/edit/${user.id}`} className="btn btn-primary">
+                      <Link to={`/edit/${user._id}`} className="btn btn-primary">
                         Edit
                       </Link>{" "}
                       <button
                         onClick={() => {
-                          deleteUser(user.id);
+                          deleteUser(user._id);
                         }}
                         className="btn btn-danger"
                       >
