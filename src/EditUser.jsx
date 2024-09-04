@@ -33,7 +33,7 @@ function EditUser() {
          * age : 20
          * }
          */
-        await axios.put(`http://localhost:3000/user/${params.id}`, values,{
+        await axios.put(`https://user-crud-backend-alzz.onrender.com/user/${params.id}`, values,{
           headers : {
             Authorization : window.localStorage.getItem("mytoken")
           }
@@ -48,7 +48,7 @@ function EditUser() {
   let getData = async () => {
     try {
       const userResp = await axios.get(
-        `http://localhost:3000/user/${params.id}`,{
+        `https://user-crud-backend-alzz.onrender.com/user/${params.id}`,{
           headers : {
             Authorization : window.localStorage.getItem("mytoken")
           }

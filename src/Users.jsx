@@ -7,7 +7,7 @@ function Users() {
   const [users, setUsers] = useState([]);
   let getData = async () => {
     try {
-      const userResp = await axios.get("http://localhost:3000/users", {
+      const userResp = await axios.get("https://user-crud-backend-alzz.onrender.com/users", {
         headers: {
           Authorization: window.localStorage.getItem("mytoken"),
         },
@@ -25,7 +25,7 @@ function Users() {
   let deleteUser = async (id) => {
     let yesno = confirm("Are you sure do you want to delete this user?");
     if (yesno) {
-      await axios.delete(`http://localhost:3000/user/${id}`, {
+      await axios.delete(`https://user-crud-backend-alzz.onrender.com/user/${id}`, {
         headers: {
           Authorization: window.localStorage.getItem("mytoken"),
         },

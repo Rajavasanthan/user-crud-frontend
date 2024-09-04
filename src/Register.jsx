@@ -29,7 +29,7 @@ function Register() {
     },
     onSubmit: async (values) => {
       try {
-        await axios.post("http://localhost:3000/register", values);
+        await axios.post("https://user-crud-backend-alzz.onrender.com/register", values);
         navigate("/user");
       } catch (error) {
         console.log(error);
