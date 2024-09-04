@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
@@ -57,6 +57,7 @@ function Login() {
           <div className="col-lg-12 mt-2">
             <input type="submit" value={"Login"} className="btn btn-primary" />
           </div>
+          <Link to={"/register"}>Register</Link>
         </div>
       </form>
     </div>
