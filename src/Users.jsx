@@ -1,12 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Topbar from "./Topbar";
 
 function Users() {
   const [users, setUsers] = useState([]);
   let getData = async () => {
     try {
-      const userResp = await axios.get("https://user-crud-backend-alzz.onrender.com/users");
+      const userResp = await axios.get("http://localhost:3000/users", {
+        headers: {
+          Authorization: window.localStorage.getItem("mytoken"),
+        },
+      });
       setUsers(userResp.data);
     } catch (error) {
       console.log(error);
@@ -20,12 +25,17 @@ function Users() {
   let deleteUser = async (id) => {
     let yesno = confirm("Are you sure do you want to delete this user?");
     if (yesno) {
-      await axios.delete(`https://user-crud-backend-alzz.onrender.com/user/${id}`);
+      await axios.delete(`http://localhost:3000/user/${id}`, {
+        headers: {
+          Authorization: window.localStorage.getItem("mytoken"),
+        },
+      });
       getData();
     }
   };
   return (
     <div className="container">
+      <Topbar/>
       <div className="row">
         <div className="col-lg-12">
           <h1>
@@ -51,10 +61,16 @@ function Users() {
                     <td>{user.name}</td>
                     <td>{user.age}</td>
                     <td>
-                      <Link to={`/user/${user._id}`} className="btn btn-primary">
+                      <Link
+                        to={`/user/${user._id}`}
+                        className="btn btn-primary"
+                      >
                         View
                       </Link>{" "}
-                      <Link to={`/edit/${user._id}`} className="btn btn-primary">
+                      <Link
+                        to={`/edit/${user._id}`}
+                        className="btn btn-primary"
+                      >
                         Edit
                       </Link>{" "}
                       <button

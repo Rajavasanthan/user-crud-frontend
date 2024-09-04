@@ -4,11 +4,18 @@ import Users from "./Users";
 import UserCreate from "./UserCreate";
 import ViewUser from "./ViewUser";
 import EditUser from "./EditUser";
+import Register from "./Register";
+import Login from "./login";
+import Topbar from "./Topbar";
 function App() {
+  
   return (
     <BrowserRouter>
+    <Topbar/>
       <Routes>
-        <Route path="/" element={<Users />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/user" element={<Users />} />
         <Route path="/user-create" element={<UserCreate />} />
         <Route path="/user/:id" element={<ViewUser />} />
         <Route path="/edit/:id" element={<EditUser/>}/>

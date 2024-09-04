@@ -31,8 +31,8 @@ function UserCreate() {
          * age : 20
          * }
          */
-        await axios.post("https://user-crud-backend-alzz.onrender.com/user", values);
-        navigate("/")
+        await axios.post("http://localhost:3000/user", values);
+        navigate("/user")
       } catch (error) {
         console.log(error);
       }

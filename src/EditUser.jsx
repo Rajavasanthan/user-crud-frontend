@@ -33,8 +33,12 @@ function EditUser() {
          * age : 20
          * }
          */
-        await axios.put(`https://user-crud-backend-alzz.onrender.com/user/${params.id}`, values);
-        navigate("/");
+        await axios.put(`http://localhost:3000/user/${params.id}`, values,{
+          headers : {
+            Authorization : window.localStorage.getItem("mytoken")
+          }
+        });
+        navigate("/user");
       } catch (error) {
         console.log(error);
       }
@@ -44,7 +48,11 @@ function EditUser() {
   let getData = async () => {
     try {
       const userResp = await axios.get(
-        `https://user-crud-backend-alzz.onrender.com/user/${params.id}`
+        `http://localhost:3000/user/${params.id}`,{
+          headers : {
+            Authorization : window.localStorage.getItem("mytoken")
+          }
+        }
       );
       formik.setValues(userResp.data);
     } catch (error) {

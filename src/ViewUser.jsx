@@ -8,7 +8,12 @@ function ViewUser() {
   let getData = async () => {
     try {
       const userResp = await axios.get(
-        `https://user-crud-backend-alzz.onrender.com/user/${params.id}`
+        `http://localhost:3000/user/${params.id}`,
+        {
+          headers : {
+            Authorization : window.localStorage.getItem("mytoken")
+          }
+        }
       );
       setUser(userResp.data);
     } catch (error) {
