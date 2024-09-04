@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 
 function UserCreate() {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -31,8 +31,16 @@ function UserCreate() {
          * age : 20
          * }
          */
-        await axios.post("https://user-crud-backend-alzz.onrender.com/user", values);
-        navigate("/user")
+        await axios.post(
+          "https://user-crud-backend-alzz.onrender.com/user",
+          values,
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("mytoken"),
+            },
+          }
+        );
+        navigate("/user");
       } catch (error) {
         console.log(error);
       }
