@@ -32,6 +32,7 @@ function Login() {
   });
   return (
     <div className="container">
+      <h1>Login</h1>
       <form onSubmit={formik.handleSubmit}>
         <div className="row">
           <div className="col-lg-12">
