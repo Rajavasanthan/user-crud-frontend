@@ -59,7 +59,7 @@ function Login() {
             <input type="submit" value={"Login"} className="btn btn-primary" />
           </div>
           <Link to={"/register"}>Register</Link>
-          <Link to={"/forget-password"}>Forget Password</Link>
+          <Link to={"/forgetPassword"}>Forget Password</Link>
         </div>
       </form>
     </div>
