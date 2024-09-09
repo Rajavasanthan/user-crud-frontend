@@ -32,6 +32,7 @@ function Login() {
   });
   return (
     <div className="container">
+      <h1>Login</h1>
       <form onSubmit={formik.handleSubmit}>
         <div className="row">
           <div className="col-lg-12">
@@ -58,6 +59,7 @@ function Login() {
             <input type="submit" value={"Login"} className="btn btn-primary" />
           </div>
           <Link to={"/register"}>Register</Link>
+          <Link to={"/forgetPassword"}>Forget Password</Link>
         </div>
       </form>
     </div>
